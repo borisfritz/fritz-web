@@ -5,7 +5,7 @@ class HTMLNode:
         self,
         tag: Optional[str]=None,
         value: Optional[str]=None,
-        children: Optional[List["HTMLNode"]]=None,
+        children: Optional[List]=None,
         props: Optional[Dict[str,str]]=None
     ):
         self.tag = tag
@@ -47,3 +47,33 @@ class LeafNode(HTMLNode):
 
     def __repr__(self):
         return f"{self.__class__.__name__}({self.tag}, {self.value}, {self.props})"
+
+class ParentNode(HTMLNode):
+    def __init__(
+        self,
+        tag: str,
+        children: List["LeafNode"],
+        props: Optional[Dict[str,str]]=None,
+    ):
+        super().__init__(tag, None, children, props)
+
+    def to_html(self):
+        if not self.tag:
+            raise ValueError("argument 'tag' is required in ParentNode!")
+        if not self.children:
+            raise ValueError("argument 'children' is required in ParentNode!")
+
+        result = ""
+        for node in self.children:
+            node_result = node.to_html()
+            result += node_result
+
+        props = ""
+        if self.props:
+            props = self.props_to_html()
+        return f'<{self.tag}{props}>{result}</{self.tag}>'
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.tag}, {self.children}, {self.props})"
+
+

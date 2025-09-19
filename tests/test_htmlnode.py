@@ -102,6 +102,5 @@ class TestParentNode(unittest.TestCase):
         parent_node = ParentNode("div", [child_node])
         self.assertEqual(parent_node.__repr__(), 'ParentNode(div, [LeafNode(span, child, None)], None)')
 
-
 if __name__ == "__main__":
     unittest.main()

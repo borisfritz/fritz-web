@@ -63,12 +63,12 @@ this paragraph has extra whitespace after it!
         self.assertEqual(block_type, BlockType.CODE)
 
     def test_block_to_blocktype_quote(self):
-        block = ">This is a quote\n>And this is a quote\n>This is also a quote!"
+        block = "> This is a quote\n> And this is a quote\n> This is also a quote!"
         block_type = block_to_blocktype(block)
         self.assertEqual(block_type, BlockType.QUOTE)
 
     def test_block_to_blocktype_unordered_list(self):
-        block = "-cup\n-plate\n-silverware\n-bowl"
+        block = "- cup\n- plate\n- silverware\n- bowl"
         block_type = block_to_blocktype(block)
         self.assertEqual(block_type, BlockType.UNORDERED_LIST)
 

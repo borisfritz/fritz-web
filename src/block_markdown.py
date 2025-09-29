@@ -18,7 +18,7 @@ def markdown_to_blocks(markdown: str) -> list[str]:
             results.append(block)
     return results
 
-def block_to_blocktype(block: str) -> BlockType:
+def get_blocktype(block: str) -> BlockType:
     if block.startswith(("# ", "## ", "### ", "#### ", "##### ", "###### ")):
         return BlockType.HEADING
     if block.startswith("```\n") and block.endswith("\n```"):
@@ -93,6 +93,6 @@ def block_to_htmlnode(block: str, block_type: BlockType):
 
         case BlockType.PARAGRAPH:
             pass
-            
 
-
+        case _:
+            raise AttributeError("Invalid BlockType")

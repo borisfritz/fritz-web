@@ -21,10 +21,10 @@ def markdown_to_blocks(markdown: str) -> list[str]:
 def block_to_blocktype(block: str) -> BlockType:
     if block.startswith(("# ", "## ", "### ", "#### ", "##### ", "###### ")):
         return BlockType.HEADING
-    if block.startswith("```") and block.endswith("```"):
+    if block.startswith("```\n") and block.endswith("\n```"):
         return BlockType.CODE
     
-    lines = block.split("\n")
+    lines = block.splitlines()
     if all(line.startswith("> ") for line in lines):
         return BlockType.QUOTE
     if all(line.startswith("- ") for line in lines):
@@ -49,33 +49,50 @@ def get_heading_tag(block: str) -> str:
         return "h6"
 
 def block_to_htmlnode(block: str, block_type: BlockType):
-    match BlockType:
+    match block_type:
         case BlockType.HEADING:
             tag = get_heading_tag(block)
             value = block.split(" ", 1)[1]
             return LeafNode(tag, value)
 
         case BlockType.CODE:
-            value = block.strip("```")
+            block = block.strip()
+            lines = block.splitlines()
+            if lines and lines[0].startswith("```"):
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            value = "\n".join(lines)
             return ParentNode("pre", [LeafNode("code", value)])
 
         case BlockType.QUOTE:
-            lines = block.split("\n")
-            for line in lines:
-                line.strip(">")
-            value = "".join(lines)
+            block = block.strip()
+            lines = block.splitlines()
+            items = [line.strip("> ").strip() for line in lines if line.strip()]
+            joined = " ".join(items)
+            value = joined.strip()
             return LeafNode("blockquote", value)
                 
         case BlockType.UNORDERED_LIST:
+            block = block.strip()
             lines = block.splitlines()
-            items = [line.lstrip("- ").strip() for line in lines if line.strip()]
-            wrapped = [f"<li>{item}</li>" for item in items]
-            value = "\n".join(wrapped)
-            return ParentNode("ul", LeafNode(""))
-
+            items = [line.strip("- ").strip() for line in lines if line.strip()]
+            leaf_list = []
+            for item in items:
+                leaf_list.append(LeafNode("li", item))
+            return ParentNode("ul", leaf_list)
 
         case BlockType.ORDERED_LIST:
-            pass
+            block = block.strip()
+            lines = block.splitlines()
+            items = [line.split(". ", 1)[1] for line in lines]
+            leaf_list = []
+            for item in items:
+                leaf_list.append(LeafNode("li", item))
+            return ParentNode("ol", leaf_list)
 
         case BlockType.PARAGRAPH:
             pass
+            
+
+

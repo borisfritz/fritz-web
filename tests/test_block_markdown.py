@@ -1,6 +1,7 @@
 import unittest
 
-from src.block_markdown import markdown_to_blocks, block_to_blocktype, BlockType
+from src.block_markdown import markdown_to_blocks, block_to_blocktype, BlockType, get_heading_tag, block_to_htmlnode
+from src.htmlnode import ParentNode, LeafNode
 
 class TestBlockMarkdown(unittest.TestCase):
     def test_markdown_to_blocks(self):
@@ -45,8 +46,7 @@ this paragraph has extra whitespace after it!
             ]
         )
 
-    ### BLOCK TO BLOCKTYPE ###
-
+class TestBlockToBlockType(unittest.TestCase):
     def test_block_to_blocktype_paragraph(self):
         block = "this is a paragraph of regular text!"
         block_type = block_to_blocktype(block)
@@ -86,4 +86,94 @@ this paragraph has extra whitespace after it!
         block = "-cup\n-plate\nsilverware\n-bowl"
         block_type = block_to_blocktype(block)
         self.assertEqual(block_type, BlockType.PARAGRAPH)
+
+class TestGetHeadingTag(unittest.TestCase):
+    def test_h1(self):
+        block = "# heading"
+        result = get_heading_tag(block)
+        self.assertEqual(result, "h1")
+
+    def test_h2(self):
+        block = "## heading"
+        result = get_heading_tag(block)
+        self.assertEqual(result, "h2")
+
+    def test_h3(self):
+        block = "### heading"
+        result = get_heading_tag(block)
+        self.assertEqual(result, "h3")
+
+    def test_h4(self):
+        block = "#### heading"
+        result = get_heading_tag(block)
+        self.assertEqual(result, "h4")
+
+    def test_h5(self):
+        block = "##### heading"
+        result = get_heading_tag(block)
+        self.assertEqual(result, "h5")
+
+    def test_h6(self):
+        block = "###### heading"
+        result = get_heading_tag(block)
+        self.assertEqual(result, "h6")
+
+class TestBlockToHTMLNode(unittest.TestCase):
+    def test_(self):
+        pass
+
+class TestBlockToHTMLNode(unittest.TestCase):
+    def test_heading_to_html(self):
+        block = "### This is a heading!"
+        node = block_to_htmlnode(block, BlockType.HEADING)
+        result = node.to_html()
+        self.assertEqual(result, "<h3>This is a heading!</h3>")
+
+    def test_code_to_html(self):
+        block = """
+```
+this is ( [ { a } ] ):
+    a bunch of code:
+    string = "string"
+        **not markdown bold**
+```
+"""
+        node = block_to_htmlnode(block, BlockType.CODE)
+        result = node.to_html()
+        self.assertEqual(result, '<pre><code>this is ( [ { a } ] ):\n    a bunch of code:\n    string = "string"\n        **not markdown bold**</code></pre>')
+
+    def test_quote_to_html(self):
+        block = """
+> Quote line one
+> and quote line two
+"""
+        node = block_to_htmlnode(block, BlockType.QUOTE)
+        result = node.to_html()
+        self.assertEqual(result, "<blockquote>Quote line one and quote line two</blockquote>")
+
+    def test_ul_to_html(self):
+        block = """
+- item one
+- item two
+- item three
+- item four
+"""
+        node = block_to_htmlnode(block, BlockType.UNORDERED_LIST)
+        result = node.to_html()
+        self.assertEqual(result, "<ul><li>item one</li><li>item two</li><li>item three</li><li>item four</li></ul>")
+
+    def test_ol_to_html(self):
+        block = """
+1. item one
+2. item two
+3. item three
+4. item four
+"""
+        node = block_to_htmlnode(block, BlockType.ORDERED_LIST)
+        result = node.to_html()
+        self.assertEqual(result, "<ol><li>item one</li><li>item two</li><li>item three</li><li>item four</li></ol>")
+
+    def test_invalid_blocktype(self):
+        with self.assertRaises(AttributeError):
+            node = block_to_htmlnode("block", BlockType.UNK)
 

@@ -22,6 +22,15 @@ class HTMLNode:
         else:
             return "".join(f' {k}="{v}"' for k, v in self.props.items())
 
+    def __eq__(self, other):
+        if not isinstance(other, HTMLNode):
+            return False
+        return (self.tag == other.tag and
+                self.value == other.value and
+                self.children == other.children and
+                self.props == other.props
+        )
+
     def __repr__(self):
         return f"{self.__class__.__name__}({self.tag}, {self.value}, {self.children}, {self.props})"
 

@@ -178,4 +178,8 @@ this is ( [ { a } ] ):
         with self.assertRaises(AttributeError):
             node = block_to_htmlnode("block", BlockType.UNK)
 
-
+    def test_paragraph_to_htmlnode(self):
+        block = "This is another paragraph with _italic_ text and `code` here"
+        html_node = block_to_htmlnode(block, BlockType.PARAGRAPH)
+        result = html_node.to_html()
+        self.assertEqual(result, "<p>This is another paragraph with <i>italic</i> text and <code>code</code> here</p>")

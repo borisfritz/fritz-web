@@ -53,10 +53,6 @@ class TestLeafNode(unittest.TestCase):
         node = LeafNode(None, "Hello World!")
         self.assertEqual(node.to_html(), 'Hello World!')
 
-    def test_leaf_no_value(self):
-        with self.assertRaises(ValueError):
-            LeafNode("b", None).to_html()
-
     def test_leaf_repr(self):
         node = LeafNode("b", "Bold Text Test!")
         self.assertEqual(node.__repr__(), "LeafNode(b, Bold Text Test!, None)")

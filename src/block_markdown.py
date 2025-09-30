@@ -1,5 +1,7 @@
 from enum import Enum
 from src.htmlnode import LeafNode, ParentNode, HTMLNode
+from src.inline_markdown import text_to_textnodes
+from src.textnode import text_node_to_html_node
 
 class BlockType(Enum):
     PARAGRAPH = "paragraph"
@@ -21,10 +23,10 @@ def markdown_to_blocks(markdown: str) -> list[str]:
 def get_blocktype(block: str) -> BlockType:
     if block.startswith(("# ", "## ", "### ", "#### ", "##### ", "###### ")):
         return BlockType.HEADING
-    if block.startswith("```\n") and block.endswith("\n```"):
-        return BlockType.CODE
-    
+
     lines = block.splitlines()
+    if len(lines) > 1 and lines[0].startswith("```") and lines[-1].startswith("```"):
+        return BlockType.CODE
     if all(line.startswith("> ") for line in lines):
         return BlockType.QUOTE
     if all(line.startswith("- ") for line in lines):
@@ -58,10 +60,8 @@ def block_to_htmlnode(block: str, block_type: BlockType):
         case BlockType.CODE:
             block = block.strip()
             lines = block.splitlines()
-            if lines and lines[0].startswith("```"):
-                lines = lines[1:]
-            if lines and lines[-1].strip() == "```":
-                lines = lines[:-1]
+            if lines and lines[0].startswith("```") and lines[-1].endswith("```"):
+                lines = lines[1:-1]
             value = "\n".join(lines)
             return ParentNode("pre", [LeafNode("code", value)])
 
@@ -92,7 +92,21 @@ def block_to_htmlnode(block: str, block_type: BlockType):
             return ParentNode("ol", leaf_list)
 
         case BlockType.PARAGRAPH:
-            pass
+            block = block.strip()
+            text_nodes = text_to_textnodes(block)
+            html_nodes = []
+            for node in text_nodes:
+                html_nodes.append(text_node_to_html_node(node))
+            return ParentNode("p", html_nodes)
 
         case _:
             raise AttributeError("Invalid BlockType")
+
+def markdown_to_html_node(markdown: str):
+    blocks = markdown_to_blocks(markdown)
+    html_nodes = []
+    for block in blocks:
+        block_type = get_blocktype(block)
+        html_nodes.append(block_to_htmlnode(block, block_type))
+    return ParentNode("div", html_nodes)
+

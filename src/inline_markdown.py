@@ -23,11 +23,12 @@ def split_nodes_delimiter(
         else:
             parts = node.text.split(delimiter)
             if len(parts) % 2 == 0:
-                raise Exception("Invalid markdown syntax, unclosed delimiter")
+                raise Exception(f"Invalid markdown syntax, unclosed delimiter: {delimiter} in part: {parts}")
             for i, part in enumerate(parts):
                 if i % 2 == 0:
                     if part != "":
-                        results.append(TextNode(part, TextType.TEXT))
+                        paragraph = " ".join(part.splitlines())
+                        results.append(TextNode(paragraph, TextType.TEXT))
                 else:
                     results.append(TextNode(part, text_type))
     return results

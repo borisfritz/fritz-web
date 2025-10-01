@@ -2,6 +2,17 @@ import re
 
 from .textnode import TextType, TextNode
 
+def text_to_textnodes(text: str) -> list[TextNode]:
+    if not text:
+        raise ValueError("Invalid Input 'text' argument.")
+    results = [TextNode(text, TextType.TEXT)]
+    results = split_nodes_image(results)
+    results = split_nodes_link(results)
+    results = split_nodes_delimiter(results, "`", TextType.CODE)
+    results = split_nodes_delimiter(results, "**", TextType.BOLD)
+    results = split_nodes_delimiter(results, "_", TextType.ITALIC)
+    return results
+
 def split_nodes_delimiter(
     old_nodes: list[TextNode],
     delimiter: str,
@@ -32,16 +43,6 @@ def split_nodes_delimiter(
                 else:
                     results.append(TextNode(part, text_type))
     return results
-
-def extract_markdown_images(text: str) -> list[tuple[str, str]]:
-    pattern = r"!\[([^\[\]]*)\]\(([^\(\)]*)\)"
-    matches = re.findall(pattern, text)
-    return matches
-
-def extract_markdown_links(text: str) -> list[tuple[str, str]]:
-    pattern = r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)"
-    matches = re.findall(pattern, text)
-    return matches
 
 def split_nodes_image(old_nodes: list[TextNode]) -> list[TextNode]:
     results = []
@@ -87,15 +88,13 @@ def split_nodes_link(old_nodes: list[TextNode]) -> list[TextNode]:
             results.append(TextNode(remainder, TextType.TEXT))
     return results
 
-def text_to_textnodes(text: str) -> list[TextNode]:
-    if not text:
-        raise ValueError("Invalid Input 'text' argument.")
-    results = [TextNode(text, TextType.TEXT)]
-    results = split_nodes_image(results)
-    results = split_nodes_link(results)
-    results = split_nodes_delimiter(results, "`", TextType.CODE)
-    results = split_nodes_delimiter(results, "**", TextType.BOLD)
-    results = split_nodes_delimiter(results, "_", TextType.ITALIC)
-    
-    return results
+def extract_markdown_images(text: str) -> list[tuple[str, str]]:
+    pattern = r"!\[([^\[\]]*)\]\(([^\(\)]*)\)"
+    matches = re.findall(pattern, text)
+    return matches
+
+def extract_markdown_links(text: str) -> list[tuple[str, str]]:
+    pattern = r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)"
+    matches = re.findall(pattern, text)
+    return matches
 

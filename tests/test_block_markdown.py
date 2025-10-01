@@ -183,3 +183,4 @@ this is ( [ { a } ] ):
         html_node = block_to_htmlnode(block, BlockType.PARAGRAPH)
         result = html_node.to_html()
         self.assertEqual(result, "<p>This is another paragraph with <i>italic</i> text and <code>code</code> here</p>")
+

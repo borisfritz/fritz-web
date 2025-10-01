@@ -11,6 +11,14 @@ class BlockType(Enum):
     UNORDERED_LIST = "unordered-list"
     ORDERED_LIST = "ordered-list"
 
+def markdown_to_html_node(markdown: str):
+    blocks = markdown_to_blocks(markdown)
+    html_nodes = []
+    for block in blocks:
+        block_type = get_blocktype(block)
+        html_nodes.append(block_to_htmlnode(block, block_type))
+    return ParentNode("div", html_nodes)
+
 def markdown_to_blocks(markdown: str) -> list[str]:
     blocks = markdown.split("\n\n")
     stripped = list(map(str.strip, blocks))
@@ -101,12 +109,4 @@ def block_to_htmlnode(block: str, block_type: BlockType):
 
         case _:
             raise AttributeError("Invalid BlockType")
-
-def markdown_to_html_node(markdown: str):
-    blocks = markdown_to_blocks(markdown)
-    html_nodes = []
-    for block in blocks:
-        block_type = get_blocktype(block)
-        html_nodes.append(block_to_htmlnode(block, block_type))
-    return ParentNode("div", html_nodes)
 

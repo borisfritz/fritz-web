@@ -30,6 +30,7 @@ the **same** even with inline stuff
 
 
     def test_full_md(self):
+        self.maxDiff = None
         md = """
 # Main Heading
 
@@ -51,7 +52,7 @@ greet("World")
 
 > This is a quote block.
 > You can put multiple lines in it.
-> Even bold and italic can appear here if supported by your parser.
+> Even **bold** and _italic_ can appear here if supported by your parser.
 
 ##### Ordered List
 
@@ -76,7 +77,7 @@ greet("World")
             '<h3>Code Block Example</h3>' +
             '<pre><code>def greet(name):\n    print(f"Hello, {name}!")\ngreet("World")</code></pre>' +
             '<h4>Blockquote Example</h4>' +
-            '<blockquote>This is a quote block. You can put multiple lines in it. Even bold and italic can appear here if supported by your parser.</blockquote>' +
+            '<blockquote>This is a quote block.\nYou can put multiple lines in it.\nEven <b>bold</b> and <i>italic</i> can appear here if supported by your parser.</blockquote>' +
             '<h5>Ordered List</h5>' +
             '<ol>' +
             '<li>First item</li>' +

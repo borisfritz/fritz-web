@@ -19,29 +19,21 @@ def split_nodes_delimiter(
     text_type: TextType
 ) -> list[TextNode]:
 
-    valid_delimiters = [
-        "**",
-        "_",
-        "`",
-    ]
-    
-    if delimiter not in valid_delimiters:
-        raise ValueError("Invalid delimiter.")
     results = []
     for node in old_nodes:
         if node.text_type != TextType.TEXT:
             results.append(node)
-        else:
-            parts = node.text.split(delimiter)
-            if len(parts) % 2 == 0:
-                raise Exception(f"Invalid markdown syntax, unclosed delimiter: {delimiter} in part: {parts}")
-            for i, part in enumerate(parts):
-                if i % 2 == 0:
-                    if part != "":
-                        paragraph = " ".join(part.splitlines())
-                        results.append(TextNode(paragraph, TextType.TEXT))
-                else:
-                    results.append(TextNode(part, text_type))
+            continue
+        parts = node.text.split(delimiter)
+        if len(parts) % 2 == 0:
+            raise Exception(f"Invalid markdown syntax, unclosed delimiter: {delimiter} in part: {parts}")
+        for i, part in enumerate(parts):
+            if i % 2 == 0:
+                if part != "":
+                    paragraph = " ".join(part.splitlines())
+                    results.append(TextNode(paragraph, TextType.TEXT))
+            else:
+                results.append(TextNode(part, text_type))
     return results
 
 def split_nodes_image(old_nodes: list[TextNode]) -> list[TextNode]:

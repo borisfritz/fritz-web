@@ -58,11 +58,6 @@ class TestSplitNodes(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
 
-    def test_invalid_delimiter(self):
-        node = [TextNode("Some **bold** text!", TextType.TEXT)]
-        with self.assertRaises(ValueError):
-            result = split_nodes_delimiter(node, "&", TextType.TEXT)
-
     def test_unclosed_delimiter(self):
         node = [TextNode("Some **bold text!", TextType.TEXT)]
         with self.assertRaises(Exception):
@@ -115,6 +110,11 @@ class TestSplitNodes(unittest.TestCase):
             ],
             new_nodes,
         )
+
+    def test_split_image_no_image(self):
+        node = [TextNode("There is no image text here!", TextType.TEXT)]
+        result = split_nodes_image(node)
+        self.assertEqual(result, node)
 
     ### LINK TEXT SPLITTING ###
 

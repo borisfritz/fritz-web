@@ -35,7 +35,7 @@ def get_blocktype(block: str) -> BlockType:
     lines = block.splitlines()
     if len(lines) > 1 and lines[0].startswith("```") and lines[-1].startswith("```"):
         return BlockType.CODE
-    if all(line.startswith("> ") for line in lines):
+    if all(line.startswith(">") for line in lines):
         return BlockType.QUOTE
     if all(line.startswith("- ") for line in lines):
         return BlockType.UNORDERED_LIST
@@ -76,28 +76,58 @@ def block_to_htmlnode(block: str, block_type: BlockType):
         case BlockType.QUOTE:
             block = block.strip()
             lines = block.splitlines()
-            items = [line.strip("> ").strip() for line in lines if line.strip()]
-            joined = " ".join(items)
-            value = joined.strip()
-            return LeafNode("blockquote", value)
+            result = []
+            for line in lines:
+                html_nodes = []
+                if line.strip():
+                    split = line.split(" ", 1)
+                    if len(split) == 1:
+                        result.append("")
+                        continue
+                    text = split[1]
+                    text_nodes = text_to_textnodes(text)
+                    for node in text_nodes:
+                        html_nodes.append(text_node_to_html_node(node))
+                    inline = ""
+                    for node in html_nodes:
+                        inline += node.to_html()
+                    result.append(inline)
+            final = "\n".join(result)
+            return LeafNode("blockquote", final)
                 
         case BlockType.UNORDERED_LIST:
             block = block.strip()
             lines = block.splitlines()
-            items = [line.strip("- ").strip() for line in lines if line.strip()]
-            leaf_list = []
-            for item in items:
-                leaf_list.append(LeafNode("li", item))
-            return ParentNode("ul", leaf_list)
+            children = []
+            for line in lines:
+                html_nodes = []
+                if line.strip():
+                    text = line.split(" ", 1)[1]
+                    text_nodes = text_to_textnodes(text)
+                    for node in text_nodes:
+                        html_nodes.append(text_node_to_html_node(node))
+                    result = ""
+                    for node in html_nodes:
+                        result += node.to_html()
+                    children.append(LeafNode("li", result))
+            return ParentNode("ul", children)
 
         case BlockType.ORDERED_LIST:
             block = block.strip()
             lines = block.splitlines()
-            items = [line.split(". ", 1)[1] for line in lines]
-            leaf_list = []
-            for item in items:
-                leaf_list.append(LeafNode("li", item))
-            return ParentNode("ol", leaf_list)
+            children = []
+            for line in lines:
+                html_nodes = []
+                if line.strip():
+                    text = line.split(". ", 1)[1]
+                    text_nodes = text_to_textnodes(text)
+                    for node in text_nodes:
+                        html_nodes.append(text_node_to_html_node(node))
+                    result = ""
+                    for node in html_nodes:
+                        result += node.to_html()
+                    children.append(LeafNode("li", result))
+            return ParentNode("ol", children)
 
         case BlockType.PARAGRAPH:
             block = block.strip()

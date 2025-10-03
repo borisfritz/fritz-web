@@ -120,10 +120,6 @@ class TestGetHeadingTag(unittest.TestCase):
         self.assertEqual(result, "h6")
 
 class TestBlockToHTMLNode(unittest.TestCase):
-    def test_(self):
-        pass
-
-class TestBlockToHTMLNode(unittest.TestCase):
     def test_heading_to_html(self):
         block = "### This is a heading!"
         node = block_to_htmlnode(block, BlockType.HEADING)
@@ -146,11 +142,12 @@ this is ( [ { a } ] ):
     def test_quote_to_html(self):
         block = """
 > Quote line one
+>
 > and quote line two
 """
         node = block_to_htmlnode(block, BlockType.QUOTE)
         result = node.to_html()
-        self.assertEqual(result, "<blockquote>Quote line one and quote line two</blockquote>")
+        self.assertEqual(result, "<blockquote>Quote line one\n\nand quote line two</blockquote>")
 
     def test_ul_to_html(self):
         block = """
@@ -163,6 +160,17 @@ this is ( [ { a } ] ):
         result = node.to_html()
         self.assertEqual(result, "<ul><li>item one</li><li>item two</li><li>item three</li><li>item four</li></ul>")
 
+    def test_ul_to_html_with_bold(self):
+        block = """
+- item one
+- item **two**
+- item three
+- item four
+"""
+        node = block_to_htmlnode(block, BlockType.UNORDERED_LIST)
+        result = node.to_html()
+        self.assertEqual(result, "<ul><li>item one</li><li>item <b>two</b></li><li>item three</li><li>item four</li></ul>")
+
     def test_ol_to_html(self):
         block = """
 1. item one
@@ -173,6 +181,17 @@ this is ( [ { a } ] ):
         node = block_to_htmlnode(block, BlockType.ORDERED_LIST)
         result = node.to_html()
         self.assertEqual(result, "<ol><li>item one</li><li>item two</li><li>item three</li><li>item four</li></ol>")
+
+    def test_ol_to_html(self):
+        block = """
+1. item one
+2. item **two**
+3. item three
+4. item four
+"""
+        node = block_to_htmlnode(block, BlockType.ORDERED_LIST)
+        result = node.to_html()
+        self.assertEqual(result, "<ol><li>item one</li><li>item <b>two</b></li><li>item three</li><li>item four</li></ol>")
 
     def test_invalid_blocktype(self):
         with self.assertRaises(AttributeError):

@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from src.block_markdown import markdown_to_html_node
 
@@ -24,3 +25,17 @@ def generate_page(from_path, template_path, dest_path):
         os.makedirs(dest_dir, exist_ok=True)
     with open(dest_path, "w") as f:
         f.write(result)
+
+def generate_website(content_dir_path, template_path, dest_dir_path):
+    for item in os.listdir(content_dir_path):
+        c_item = os.path.join(content_dir_path, item)
+        d_item = os.path.join(dest_dir_path, item)
+        if os.path.isdir(c_item):
+            os.makedirs(d_item)
+            print(f"Created Directory: {d_item}")
+            generate_website(c_item, template_path, d_item)
+        elif item.lower().endswith(".md"):
+            h_name = os.path.splitext(item)[0] +".html"
+            h_item = os.path.join(dest_dir_path, h_name)
+            generate_page(c_item, template_path, h_item)
+            print(f"Generated File: {c_item} -> {d_item}")

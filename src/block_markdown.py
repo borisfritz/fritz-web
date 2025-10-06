@@ -1,5 +1,5 @@
 from enum import Enum
-from src.htmlnode import LeafNode, ParentNode, HTMLNode
+from src.htmlnode import LeafNode, ParentNode
 from src.inline_markdown import text_to_textnodes
 from src.textnode import text_node_to_html_node
 
@@ -31,7 +31,6 @@ def markdown_to_blocks(markdown: str) -> list[str]:
 def get_blocktype(block: str) -> BlockType:
     if block.startswith(("# ", "## ", "### ", "#### ", "##### ", "###### ")):
         return BlockType.HEADING
-
     lines = block.splitlines()
     if len(lines) > 1 and lines[0].startswith("```") and lines[-1].startswith("```"):
         return BlockType.CODE
@@ -41,7 +40,6 @@ def get_blocktype(block: str) -> BlockType:
         return BlockType.UNORDERED_LIST
     if all(line.split(". ")[0].isdigit() and int(line.split(".", 1)[0]) == i + 1 for i, line in enumerate(lines)):
         return BlockType.ORDERED_LIST
-
     return BlockType.PARAGRAPH
 
 def get_heading_tag(block: str) -> str:

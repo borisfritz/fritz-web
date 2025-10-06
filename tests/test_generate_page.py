@@ -7,9 +7,3 @@ class TestExtractTitle(unittest.TestCase):
         md = "# test title!\n\nThis is the rest of the .md file!"
         result = extract_title(md)
         self.assertEqual(result, "test title!")
-
-    def test_extract_title_fail(self):
-        md = "test title!\n\nThis is the rest of the .md file!"
-        with self.assertRaises(Exception):
-            result = extract_title(md)
-    

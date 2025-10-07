@@ -8,7 +8,7 @@ Here's the deal, **I like Tolkien**.
 >
 > -- J.R.R. Tolkien
 
-## Blog posts! HI IVE CHANGED!
+## Blog posts!
 
 - [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
 - [Why Tom Bombadil Was a Mistake](/blog/tom)

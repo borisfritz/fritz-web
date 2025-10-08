@@ -1,137 +1,174 @@
+@font-face {
+    font-family: 'Mononoki Nerd Font';
+    src: url('/fritz-web/fonts/MononokiNerdFont-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mononoki Nerd Font';
+    src: url('/fritz-web/fonts/MononokiNerdFont-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mononoki Nerd Font';
+    src: url('/fritz-web/fonts/MononokiNerdFont-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Mononoki Nerd Font';
+    src: url('/fritz-web/fonts/MononokiNerdFont-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
 body {
-  background-color: #1a1b26;
-  color: #a9b1d6;
-  font-family: "Luminari", "Georgia", serif;
-  line-height: 1.7;
-  margin: 0;
-  padding: 20px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+    background-color: #1a1b26;
+    color: #a9b1d6;
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 b {
-  font-weight: 900;
-  color: #e0af68;
+    font-weight: 900;
+    color: #c2c8e7;
 }
 
 h1,
 h2 {
-  color: #e0af68;
-  margin-top: 24px;
-  margin-bottom: 16px;
-  text-shadow: 2px 2px 4px #000;
+    color: #e0af68;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px #000;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  color: #7aa2f7;
-  margin-top: 24px;
-  margin-bottom: 16px;
-  text-shadow: 2px 2px 4px #000;
+    color: #7aa2f7;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px #000;
 }
 
 h1 {
-  font-size: 2.5em;
+    font-size: 2.5em;
 }
 
 h2 {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 h3 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 h4,
 h5,
 h6 {
-  font-size: 1.2em;
+    font-size: 1.2em;
+}
+
+h1 b,
+h2 b,
+h3 b,
+h4 b,
+h5 b,
+h6 b {
+  color: inherit; /* keeps heading color */
 }
 
 a {
-  color: #7dcfff;
-  text-decoration: none;
-  border-bottom: 2px solid #7dcfff;
+    color: #7dcfff;
+    text-decoration: none;
+    border-bottom: 2px solid #7dcfff;
 }
 
 a:hover {
-  color: #bb9af7;
-  border-color: #bb9af7;
+    color: #bb9af7;
+    border-color: #bb9af7;
 }
 
 ul,
 ol {
-  padding-left: 30px;
+    padding-left: 30px;
 }
 
 code {
-  background-color: #24283b;
-  border-radius: 6px;
-  color: #e0af68;
-  padding: 0.4em 0.6em;
-  font-family: "Courier New", monospace;
+    background-color: #24283b;
+    border-radius: 6px;
+    color: #e0af68;
+    padding: 0.4em 0.6em;
+    font-family: "Mononoki Nerd Font", monospace;
 }
 
 pre code {
-  padding: 0;
+    padding: 0;
 }
 
 pre {
-  background-color: #24283b;
-  border-radius: 6px;
-  padding: 1em;
-  overflow: auto;
-  box-shadow: 2px 2px 6px #000;
+    background-color: #24283b;
+    border-radius: 6px;
+    padding: 1em;
+    overflow: auto;
+    box-shadow: 2px 2px 6px #000;
 }
 
 blockquote {
-  background-color: #24283b;
-  border-left: 4px solid #565f89;
-  padding-left: 2em;
-  margin-left: 0;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-right: 0.5em;
-  color: #c0caf5;
-  font-style: italic;
+    background-color: #24283b;
+    border-left: 4px solid #565f89;
+    padding-left: 2em;
+    margin-left: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    color: #c0caf5;
+    font-style: italic;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  border: 3px solid #24283b;
-  box-shadow: 3px 3px 6px #000;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 3px solid #24283b;
+    box-shadow: 3px 3px 6px #000;
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+    width: 12px;
+    height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1b26;
-  border-radius: 6px;
+    background: #1a1b26;
+    border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #24283b;
-  border-radius: 6px;
-  border: 3px solid #1a1b26;
+    background-color: #24283b;
+    border-radius: 6px;
+    border: 3px solid #1a1b26;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #565f89;
+    background-color: #565f89;
 }
 
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #24283b #1a1b26;
+    scrollbar-width: thin;
+    scrollbar-color: #24283b #1a1b26;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #1a1b26;
+    background: #1a1b26;
 }

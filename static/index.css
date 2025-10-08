@@ -1,6 +1,6 @@
 body {
-  background-color: #1f1c25;
-  color: #f0e6d1;
+  background-color: #1a1b26;
+  color: #a9b1d6;
   font-family: "Luminari", "Georgia", serif;
   line-height: 1.7;
   margin: 0;
@@ -12,6 +12,7 @@ body {
 
 b {
   font-weight: 900;
+  color: #e0af68;
 }
 
 h1,
@@ -20,7 +21,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #dda15e;
+  color: #7aa2f7;
   margin-top: 24px;
   margin-bottom: 16px;
   text-shadow: 2px 2px 4px #000;
@@ -45,14 +46,14 @@ h6 {
 }
 
 a {
-  color: #e0a96d;
+  color: #7dcfff;
   text-decoration: none;
-  border-bottom: 2px solid #e0a96d;
+  border-bottom: 2px solid #7dcfff;
 }
 
 a:hover {
-  color: #f4a261;
-  border-color: #f4a261;
+  color: #bb9af7;
+  border-color: #bb9af7;
 }
 
 ul,
@@ -61,9 +62,9 @@ ol {
 }
 
 code {
-  background-color: #3c3c42;
+  background-color: #24283b;
   border-radius: 6px;
-  color: #e9c46a;
+  color: #e0af68;
   padding: 0.4em 0.6em;
   font-family: "Courier New", monospace;
 }
@@ -73,7 +74,7 @@ pre code {
 }
 
 pre {
-  background-color: #3c3c42;
+  background-color: #24283b;
   border-radius: 6px;
   padding: 1em;
   overflow: auto;
@@ -81,14 +82,14 @@ pre {
 }
 
 blockquote {
-  background-color: #2e2c35;
-  border-left: 4px solid #8d99ae;
+  background-color: #24283b;
+  border-left: 4px solid #565f89;
   padding-left: 2em;
   margin-left: 0;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-right: 0.5em;
-  color: #ddd;
+  color: #c0caf5;
   font-style: italic;
 }
 
@@ -96,7 +97,7 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  border: 3px solid #3c3c42;
+  border: 3px solid #24283b;
   box-shadow: 3px 3px 6px #000;
 }
 
@@ -106,25 +107,26 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f1c25;
+  background: #1a1b26;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3c3c42;
+  background-color: #24283b;
   border-radius: 6px;
-  border: 3px solid #1f1c25;
+  border: 3px solid #1a1b26;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #5a5466;
+  background-color: #565f89;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3c3c42 #1f1c25;
+  scrollbar-color: #24283b #1a1b26;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #1f1c25;
+  background: #1a1b26;
 }
+

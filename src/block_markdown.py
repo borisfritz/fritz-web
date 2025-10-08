@@ -60,8 +60,15 @@ def block_to_htmlnode(block: str, block_type: BlockType):
     match block_type:
         case BlockType.HEADING:
             tag = get_heading_tag(block)
-            value = block.split(" ", 1)[1]
-            return LeafNode(tag, value)
+            text = block.split(" ", 1)[1]
+            text_nodes = text_to_textnodes(text)
+            html_nodes = []
+            for node in text_nodes:
+                html_nodes.append(text_node_to_html_node(node))
+            result = ""
+            for node in html_nodes:
+                result += node.to_html()
+            return LeafNode(tag, result)
 
         case BlockType.CODE:
             block = block.strip()

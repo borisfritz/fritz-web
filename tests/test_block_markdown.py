@@ -126,6 +126,12 @@ class TestBlockToHTMLNode(unittest.TestCase):
         result = node.to_html()
         self.assertEqual(result, "<h3>This is a heading!</h3>")
 
+    def test_heading_to_html_with_bold(self):
+        block = "### This is a **heading!**"
+        node = block_to_htmlnode(block, BlockType.HEADING)
+        result = node.to_html()
+        self.assertEqual(result, "<h3>This is a <b>heading!</b></h3>")
+
     def test_code_to_html(self):
         block = """
 ```

@@ -56,18 +56,22 @@ def get_heading_tag(block: str) -> str:
     if block.startswith("###### "):
         return "h6"
 
+def text_to_html(text):
+    html_nodes = []
+    text_nodes = text_to_textnodes(text)
+    for node in text_nodes:
+        html_nodes.append(text_node_to_html_node(node))
+    result = ""
+    for node in html_nodes:
+        result += node.to_html()
+    return result
+
 def block_to_htmlnode(block: str, block_type: BlockType):
     match block_type:
         case BlockType.HEADING:
             tag = get_heading_tag(block)
             text = block.split(" ", 1)[1]
-            text_nodes = text_to_textnodes(text)
-            html_nodes = []
-            for node in text_nodes:
-                html_nodes.append(text_node_to_html_node(node))
-            result = ""
-            for node in html_nodes:
-                result += node.to_html()
+            result = text_to_html(text)
             return LeafNode(tag, result)
 
         case BlockType.CODE:
@@ -81,23 +85,18 @@ def block_to_htmlnode(block: str, block_type: BlockType):
         case BlockType.QUOTE:
             block = block.strip()
             lines = block.splitlines()
-            result = []
+            quote_block = []
             for line in lines:
                 html_nodes = []
                 if line.strip():
                     split = line.split(" ", 1)
                     if len(split) == 1:
-                        result.append("")
+                        quote_block.append("")
                         continue
                     text = split[1]
-                    text_nodes = text_to_textnodes(text)
-                    for node in text_nodes:
-                        html_nodes.append(text_node_to_html_node(node))
-                    inline = ""
-                    for node in html_nodes:
-                        inline += node.to_html()
-                    result.append(inline)
-            final = "\n".join(result)
+                    result = text_to_html(text)
+                    quote_block.append(result)
+            final = "\n".join(quote_block)
             return LeafNode("blockquote", final)
                 
         case BlockType.UNORDERED_LIST:
@@ -108,12 +107,7 @@ def block_to_htmlnode(block: str, block_type: BlockType):
                 html_nodes = []
                 if line.strip():
                     text = line.split(" ", 1)[1]
-                    text_nodes = text_to_textnodes(text)
-                    for node in text_nodes:
-                        html_nodes.append(text_node_to_html_node(node))
-                    result = ""
-                    for node in html_nodes:
-                        result += node.to_html()
+                    result = text_to_html(text)
                     children.append(LeafNode("li", result))
             return ParentNode("ul", children)
 
@@ -125,12 +119,7 @@ def block_to_htmlnode(block: str, block_type: BlockType):
                 html_nodes = []
                 if line.strip():
                     text = line.split(". ", 1)[1]
-                    text_nodes = text_to_textnodes(text)
-                    for node in text_nodes:
-                        html_nodes.append(text_node_to_html_node(node))
-                    result = ""
-                    for node in html_nodes:
-                        result += node.to_html()
+                    result = text_to_html(text)
                     children.append(LeafNode("li", result))
             return ParentNode("ol", children)
 

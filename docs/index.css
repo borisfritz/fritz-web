@@ -16,7 +16,13 @@ b {
 }
 
 h1,
-h2,
+h2 {
+  color: #e0af68;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px #000;
+}
+
 h3,
 h4,
 h5,
@@ -129,4 +135,3 @@ img {
 ::-webkit-scrollbar-corner {
   background: #1a1b26;
 }
-

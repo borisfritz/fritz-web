@@ -1,7 +1,7 @@
 import unittest
 
 from src.block_markdown import BlockType
-from src.block_markdown import markdown_to_blocks, get_blocktype, get_heading_tag, block_to_htmlnode
+from src.block_markdown import markdown_to_blocks, get_block_type, get_heading_tag, block_to_htmlnode
 from src.htmlnode import ParentNode, LeafNode
 
 class TestBlockMarkdown(unittest.TestCase):
@@ -50,42 +50,42 @@ this paragraph has extra whitespace after it!
 class TestGetBlockType(unittest.TestCase):
     def test_get_blocktype_paragraph(self):
         block = "this is a paragraph of regular text!"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.PARAGRAPH)
 
     def test_get_blocktype_heading(self):
         block = "### THIS IS A HEADING!"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.HEADING)
 
     def test_get_blocktype_code(self):
         block = "```\n{this is}\na-bunch=of(code):\n```"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.CODE)
 
     def test_get_blocktype_quote(self):
         block = "> This is a quote\n> And this is a quote\n> This is also a quote!"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.QUOTE)
 
     def test_get_blocktype_unordered_list(self):
         block = "- cup\n- plate\n- silverware\n- bowl"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.UNORDERED_LIST)
 
     def test_get_blocktype_ordered_list(self):
         block = "1. Number One\n2. Number Two\n3. Number Three\n4. Number Four"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.ORDERED_LIST)
 
     def test_get_blocktype_incorrect_ol(self):
         block = "1. Number One\n2. Number Two\n6. Number Three\n4. Number Four"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.PARAGRAPH)
 
     def test_get_blocktype_incorrect_ul(self):
         block = "-cup\n-plate\nsilverware\n-bowl"
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.PARAGRAPH)
 
 class TestGetHeadingTag(unittest.TestCase):

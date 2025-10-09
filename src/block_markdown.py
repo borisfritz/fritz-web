@@ -15,7 +15,7 @@ def markdown_to_html_node(markdown: str):
     blocks = markdown_to_blocks(markdown)
     html_nodes = []
     for block in blocks:
-        block_type = get_blocktype(block)
+        block_type = get_block_type(block)
         html_nodes.append(block_to_htmlnode(block, block_type))
     return ParentNode("div", html_nodes)
 
@@ -28,7 +28,7 @@ def markdown_to_blocks(markdown: str) -> list[str]:
             results.append(block)
     return results
 
-def get_blocktype(block: str) -> BlockType:
+def get_block_type(block: str) -> BlockType:
     if block.startswith(("# ", "## ", "### ", "#### ", "##### ", "###### ")):
         return BlockType.HEADING
     lines = block.splitlines()
@@ -42,7 +42,7 @@ def get_blocktype(block: str) -> BlockType:
         return BlockType.ORDERED_LIST
     return BlockType.PARAGRAPH
 
-def get_heading_tag(block: str) -> str:
+def get_heading_tag(block: str) -> str | None:
     if block.startswith("# "):
         return "h1"
     if block.startswith("## "):
@@ -55,6 +55,8 @@ def get_heading_tag(block: str) -> str:
         return "h5"
     if block.startswith("###### "):
         return "h6"
+    return None
+
 
 def text_to_html(text):
     html_nodes = []
@@ -87,7 +89,6 @@ def block_to_htmlnode(block: str, block_type: BlockType):
             lines = block.splitlines()
             quote_block = []
             for line in lines:
-                html_nodes = []
                 if line.strip():
                     split = line.split(" ", 1)
                     if len(split) == 1:
@@ -104,7 +105,6 @@ def block_to_htmlnode(block: str, block_type: BlockType):
             lines = block.splitlines()
             children = []
             for line in lines:
-                html_nodes = []
                 if line.strip():
                     text = line.split(" ", 1)[1]
                     result = text_to_html(text)
@@ -116,7 +116,6 @@ def block_to_htmlnode(block: str, block_type: BlockType):
             lines = block.splitlines()
             children = []
             for line in lines:
-                html_nodes = []
                 if line.strip():
                     text = line.split(". ", 1)[1]
                     result = text_to_html(text)
@@ -133,4 +132,3 @@ def block_to_htmlnode(block: str, block_type: BlockType):
 
         case _:
             raise AttributeError("Invalid BlockType")
-

@@ -16,6 +16,7 @@ def copy_directory(src: str, dst: str):
                 print(f"Created Directory: {d_item}")
                 recursive_copy(s_item, d_item)
             else:
-                shutil.copy2(s_item, d_item)
-                print(f"Coppied File: {s_item} -> {d_item}")
+                # Use copyfile instead of copy2 to avoid Windows/WSL metadata (utime) permission issues
+                shutil.copyfile(s_item, d_item)
+                print(f"Copied File: {s_item} -> {d_item}")
     recursive_copy(src, dst)

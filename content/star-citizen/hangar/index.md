@@ -1,16 +1,22 @@
-# BorisFritz Hanger!
+# My Hanger
 
 [![Fritz in the 'Verse](/images/fritz-in-the-verse.png)](/star-citizen/)
 
 > Hey all!  This is just a simple list of my current hangar!
 
-- Ship Types:
-    - **Solo Ships:** _Vehicles that are soley solo ships.  No room for any additional crew._
-    - **Flexi-Crew Ships:** _Vehicles that can be flown effectively solo or with additional crew members._
-    - **Multi-Crew Ships:** _Vehicles that can only be flown effectively with a crew and have heavily reduced capabilities when flown solo._
-- Symbol Legend:
-    - `--` LTI Tokens / Soon to be Replaced
-    - `++` Unreleased Ships
+
+#### Ship Types:
+
+- **Solo Ships:** _Vehicles that are soley solo ships.  No room for any additional crew._
+- **Flexi-Crew Ships:** _Vehicles that can be flown effectively solo or with additional crew members._
+- **Multi-Crew Ships:** _Vehicles that can only be flown effectively with a crew and have heavily reduced capabilities when flown solo._
+
+#### Symbol Legend:
+
+```
+-- : LTI Tokens / Soon to be Replaced
+++ : Unreleased Ships
+```
 
 ## Pledge Ships
 

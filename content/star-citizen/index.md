@@ -2,7 +2,7 @@
 
 [< Blog Selection](/)
 
-![Fritz in the 'Verse](/images/fritzintheversebanner.png)
+![Fritz in the 'Verse](/images/verse-banner.jpg)
 
 > This is a personal blog about my adventures in Star Citizen!  I hope you enjoy!
 

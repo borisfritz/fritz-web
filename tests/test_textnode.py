@@ -79,6 +79,12 @@ class TestTextNodeToHTMLNode(unittest.TestCase):
         self.assertEqual(html_node.value, "")
         self.assertEqual(html_node.props, {"src":"image/test.jpg", "alt":"This is an image node"})
 
+    def test_image_link(self):
+        node = TextNode("This is an image-link node||LINK||google.com", TextType.IMAGE, url="image/test.jpg")
+        html_node = text_node_to_html_node(node)
+        result = html_node.to_html()
+        self.assertEqual(result, '<a href="google.com"><img src="image/test.jpg" alt="This is an image-link node"></img></a>')
+
     def test_invalid_text_node(self):
         with self.assertRaises(AttributeError):
             node = TextNode("text", TextType.NONE)

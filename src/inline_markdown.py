@@ -6,6 +6,7 @@ def text_to_textnodes(text: str) -> list[TextNode]:
     if not text:
         raise ValueError("Invalid Input 'text' argument.")
     results = [TextNode(text, TextType.TEXT)]
+    results = split_nodes_image_link(results)
     results = split_nodes_image(results)
     results = split_nodes_link(results)
     results = split_nodes_delimiter(results, "`", TextType.CODE)
@@ -80,6 +81,27 @@ def split_nodes_link(old_nodes: list[TextNode]) -> list[TextNode]:
             results.append(TextNode(remainder, TextType.TEXT))
     return results
 
+def split_nodes_image_link(old_nodes: list[TextNode]) -> list[TextNode]:
+    results = []
+    for node in old_nodes:
+        if node.text_type != TextType.TEXT:
+            results.append(node)
+            continue
+        img_link_data = extract_markdown_image_links(node.text)
+        if not img_link_data:
+            results.append(node)
+            continue
+        remainder = node.text
+        for alt, img_url, link_url in img_link_data:
+            full_syntax = f"[![{alt}]({img_url})]({link_url})"
+            left, remainder = remainder.split(full_syntax, 1)
+            if left:
+                results.append(TextNode(left, TextType.TEXT))
+            results.append(TextNode(f"{alt}||LINK||{link_url}", TextType.IMAGE, img_url))
+        if remainder:
+            results.append(TextNode(remainder, TextType.TEXT))
+    return results
+
 def extract_markdown_images(text: str) -> list[tuple[str, str]]:
     pattern = r"!\[([^\[\]]*)\]\(([^\(\)]*)\)"
     matches = re.findall(pattern, text)
@@ -90,3 +112,7 @@ def extract_markdown_links(text: str) -> list[tuple[str, str]]:
     matches = re.findall(pattern, text)
     return matches
 
+def extract_markdown_image_links(text: str) -> list[tuple[str, str, str]]:
+    pattern = r"\[!\[([^\]]*)\]\(([^\)]*)\)\]\(([^\)]*)\)"
+    matches = re.findall(pattern, text)
+    return matches

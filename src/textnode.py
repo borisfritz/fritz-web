@@ -1,7 +1,8 @@
 from typing import Optional
 from enum import Enum
 
-from .htmlnode import LeafNode
+from .htmlnode import LeafNode, ParentNode
+
 
 class TextType(Enum):
     TEXT = "plain-text"
@@ -42,6 +43,10 @@ def text_node_to_html_node(node: TextNode) -> LeafNode:
         case TextType.LINK:
             return LeafNode("a", node.text, {"href": node.url})
         case TextType.IMAGE:
+            if "||LINK||" in node.text:
+                alt, link_url = node.text.split("||LINK||")
+                img_node = LeafNode("img", "", {"src": node.url, "alt": alt})
+                return ParentNode("a", [img_node], {"href": link_url})
             return LeafNode("img", "", {"src": node.url, "alt": node.text})
         case _:
             raise ValueError(f"invalid text type: {node.text_type}")

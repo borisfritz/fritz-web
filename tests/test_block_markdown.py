@@ -166,6 +166,17 @@ this is ( [ { a } ] ):
         result = node.to_html()
         self.assertEqual(result, "<ul><li>item one</li><li>item two</li><li>item three</li><li>item four</li></ul>")
 
+    def test_ul_to_html_nested(self):
+        block = """
+- item one
+- item two
+    - item three
+    - item four
+"""
+        node = block_to_htmlnode(block, BlockType.UNORDERED_LIST)
+        result = node.to_html()
+        self.assertEqual(result, "<ul><li>item one</li><li>item two<ul><li>item three</li><li>item four</li></ul></li></ul>")
+
     def test_ul_to_html_with_bold(self):
         block = """
 - item one
@@ -177,6 +188,8 @@ this is ( [ { a } ] ):
         result = node.to_html()
         self.assertEqual(result, "<ul><li>item one</li><li>item <b>two</b></li><li>item three</li><li>item four</li></ul>")
 
+
+
     def test_ol_to_html(self):
         block = """
 1. item one
@@ -187,6 +200,17 @@ this is ( [ { a } ] ):
         node = block_to_htmlnode(block, BlockType.ORDERED_LIST)
         result = node.to_html()
         self.assertEqual(result, "<ol><li>item one</li><li>item two</li><li>item three</li><li>item four</li></ol>")
+
+    def test_ol_to_html_nested(self):
+        block = """
+1. item one
+2. item two
+    1. item three
+    2. item four
+"""
+        node = block_to_htmlnode(block, BlockType.ORDERED_LIST)
+        result = node.to_html()
+        self.assertEqual(result, "<ol><li>item one</li><li>item two<ol><li>item three</li><li>item four</li></ol></li></ol>")
 
     def test_ol_to_html(self):
         block = """

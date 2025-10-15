@@ -1,3 +1,4 @@
+import re
 from enum import Enum
 from src.htmlnode import LeafNode, ParentNode
 from src.inline_markdown import text_to_textnodes
@@ -36,10 +37,15 @@ def get_block_type(block: str) -> BlockType:
         return BlockType.CODE
     if all(line.startswith(">") for line in lines):
         return BlockType.QUOTE
-    if all(line.startswith("- ") for line in lines):
+    if all(line.lstrip().startswith(("- ", "* ", "+ ")) for line in lines):
         return BlockType.UNORDERED_LIST
-    if all(line.split(". ")[0].isdigit() and int(line.split(".", 1)[0]) == i + 1 for i, line in enumerate(lines)):
-        return BlockType.ORDERED_LIST
+    matches = [re.match(r'^\s*(\d+)\.\s', line) for line in lines]
+    if all(matches):
+        top_level_items = [(int(match.group(1)), line) for match, line in zip(matches, lines) if not line.startswith((' ', '\t'))]
+        if top_level_items:
+            top_level_numbers = [num for num, _ in top_level_items]
+            if top_level_numbers == list(range(1, len(top_level_numbers) + 1)):
+                return BlockType.ORDERED_LIST
     return BlockType.PARAGRAPH
 
 def get_heading_tag(block: str) -> str | None:
@@ -57,6 +63,50 @@ def get_heading_tag(block: str) -> str | None:
         return "h6"
     return None
 
+def parse_list_items(lines: list[str], is_ordered: bool) -> list[dict]:
+    items = []
+    stack = []
+    for line in lines:
+        if not line.strip():
+            continue
+        expanded_line = line.expandtabs(4)
+        indent = len(expanded_line) - len(expanded_line.lstrip())
+        level = indent // 2
+        if is_ordered:
+            match = re.match(r'^\s*\d+\.\s+(.*)$', line)
+            if match:
+                text = match.group(1)
+            else:
+                continue
+        else:
+            match = re.match(r'^\s*[-*+]\s+(.*)$', line)
+            if match:
+                text = match.group(1)
+            else:
+                continue
+        item = {'text': text.strip(), 'level': level, 'children': []}
+        while stack and stack[-1]['level'] >= level:
+            stack.pop()
+        if stack:
+            stack[-1]['children'].append(item)
+        else:
+            items.append(item)
+        stack.append(item)
+    return items
+
+def build_list_html_nodes(items: list[dict], is_ordered: bool) -> list:
+    children = []
+    for item in items:
+        text_html = text_to_html(item['text'])
+        if item['children']:
+            nested_list = build_list_html_nodes(item['children'], is_ordered)
+            tag = "ol" if is_ordered else "ul"
+            nested_node = ParentNode(tag, nested_list)
+            li_children = [LeafNode(None, text_html), nested_node]
+            children.append(ParentNode("li", li_children))
+        else:
+            children.append(LeafNode("li", text_html))
+    return children
 
 def text_to_html(text):
     html_nodes = []
@@ -103,23 +153,15 @@ def block_to_htmlnode(block: str, block_type: BlockType):
         case BlockType.UNORDERED_LIST:
             block = block.strip()
             lines = block.splitlines()
-            children = []
-            for line in lines:
-                if line.strip():
-                    text = line.split(" ", 1)[1]
-                    result = text_to_html(text)
-                    children.append(LeafNode("li", result))
+            items = parse_list_items(lines, False)
+            children = build_list_html_nodes(items, False)
             return ParentNode("ul", children)
 
         case BlockType.ORDERED_LIST:
             block = block.strip()
             lines = block.splitlines()
-            children = []
-            for line in lines:
-                if line.strip():
-                    text = line.split(". ", 1)[1]
-                    result = text_to_html(text)
-                    children.append(LeafNode("li", result))
+            items = parse_list_items(lines, True)
+            children = build_list_html_nodes(items, True)
             return ParentNode("ol", children)
 
         case BlockType.PARAGRAPH:

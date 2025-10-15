@@ -2,11 +2,13 @@
 
 [< Blog Selection](/)
 
-![Fritz in the 'Verse](/images/verse-banner.jpg)
+![Fritz in the 'Verse](/images/fritz-in-the-verse.png)
 
 > This is a personal blog about my adventures in Star Citizen!  I hope you enjoy!
 
-[![my hanger](/images/sc-hanger.png)](/star-citizen/hanger/)
+[![my hanger](/images/whats-in-my-hangar.png)](/star-citizen/hangar/)
+
+[![adventure blogs](/images/adventure-blogs.png)](/star-citizen/blog/)
 
 ## Star Citizen Blogs!
 

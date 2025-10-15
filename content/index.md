@@ -1,6 +1,6 @@
-# My Ramblings
+# Blogs by Fritz
 
-[![Fritz in the 'Verse](/images/verse-banner.jpg)](/star-citizen/)
+[![Fritz in the 'Verse](/images/fritz-in-the-verse.png)](/star-citizen/)
 
 > "Fritz in the 'Verse" is a blog detailing my adventures in Star Citizen, a player drive space-sim game on PC.
 

@@ -42,9 +42,9 @@
         - _Anvil_ **C8R Pisces Rescue**
     - Industrial
         - _Drake_ **Golem**
-        - _Argo_ **SRV**
         - _Drake_ **Vulture**
         - --_Misc_ **Prospector**
+        - --_Argo_ **SRV**
 
 
 - **Flexi-crew Ships**
@@ -84,7 +84,7 @@
     - _Argo_ **Mole**
     - _Anvil_ **Carrack**
 
-> Note: ~$900 available in LTI / Ships to be melted for future purchases.
+> Note: ~$1000 available in LTI / Ships to be melted for future purchases.
 
 ## In-Game Acquisition
 

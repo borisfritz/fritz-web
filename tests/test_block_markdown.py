@@ -68,6 +68,11 @@ class TestGetBlockType(unittest.TestCase):
         block_type = get_block_type(block)
         self.assertEqual(block_type, BlockType.QUOTE)
 
+    def test_get_blocktype_hr(self):
+        block = "---"
+        block_type = get_block_type(block)
+        self.assertEqual(block_type, BlockType.HORIZONTAL_RULE)
+
     def test_get_blocktype_unordered_list(self):
         block = "- cup\n- plate\n- silverware\n- bowl"
         block_type = get_block_type(block)
@@ -222,6 +227,12 @@ this is ( [ { a } ] ):
         node = block_to_htmlnode(block, BlockType.ORDERED_LIST)
         result = node.to_html()
         self.assertEqual(result, "<ol><li>item one</li><li>item <b>two</b></li><li>item three</li><li>item four</li></ol>")
+
+    def test_hr_to_html(self):
+        block = "---"
+        node = block_to_htmlnode(block, BlockType.HORIZONTAL_RULE)
+        result = node.to_html()
+        self.assertEqual(result, "<hr>")
 
     def test_invalid_blocktype(self):
         with self.assertRaises(AttributeError):

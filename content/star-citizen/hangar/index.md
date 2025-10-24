@@ -1,9 +1,12 @@
 # My Hanger
 
+---
+
 [![Fritz in the 'Verse](/images/fritz-in-the-verse.png)](/star-citizen/)
 
-> Hey all!  This is just a simple list of my current hangar!
-
+Hey all!  This is just a simple list of my current hangar! The overall structure is currently a work in progress.
+In the future I plan on addding links to each ship's wiki page to help provide more information.  I will also be adding
+comments about why and how I use specific ships.
 
 #### Ship Types:
 
@@ -89,3 +92,11 @@
 ## In-Game Acquisition
 
 - _Argo_ **ATLAS**
+
+---
+
+[< Fritz in the 'Verse](/star-citizen/)
+
+---
+
+wip: site and contact info

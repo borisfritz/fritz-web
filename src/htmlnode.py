@@ -47,6 +47,8 @@ class LeafNode(HTMLNode):
         if not self.tag:
             return self.value
         else:
+            if self.tag == "hr":
+                return "<hr>"
             props = ""
             if self.props:
                 props = self.props_to_html()

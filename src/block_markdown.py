@@ -11,6 +11,7 @@ class BlockType(Enum):
     QUOTE = "quote"
     UNORDERED_LIST = "unordered-list"
     ORDERED_LIST = "ordered-list"
+    HORIZONTAL_RULE = "horizontal-rule"
 
 def markdown_to_html_node(markdown: str):
     blocks = markdown_to_blocks(markdown)
@@ -46,6 +47,8 @@ def get_block_type(block: str) -> BlockType:
             top_level_numbers = [num for num, _ in top_level_items]
             if top_level_numbers == list(range(1, len(top_level_numbers) + 1)):
                 return BlockType.ORDERED_LIST
+    if block.strip() == "---":
+        return BlockType.HORIZONTAL_RULE
     return BlockType.PARAGRAPH
 
 def get_heading_tag(block: str) -> str | None:
@@ -171,6 +174,9 @@ def block_to_htmlnode(block: str, block_type: BlockType):
             for node in text_nodes:
                 html_nodes.append(text_node_to_html_node(node))
             return ParentNode("p", html_nodes)
+
+        case BlockType.HORIZONTAL_RULE:
+            return LeafNode("hr", "")
 
         case _:
             raise AttributeError("Invalid BlockType")

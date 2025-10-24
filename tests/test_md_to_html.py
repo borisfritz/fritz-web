@@ -48,6 +48,8 @@ def greet(name):
 greet("World")
 ```
 
+---
+
 #### Blockquote Example
 
 > This is a quote block.
@@ -76,6 +78,7 @@ greet("World")
             '<h2>Subheading</h2><p>Another paragraph here. You can combine <b>bold</b>, <i>italic</i>, and <code>inline code</code> together.</p>' +
             '<h3>Code Block Example</h3>' +
             '<pre><code>def greet(name):\n    print(f"Hello, {name}!")\ngreet("World")</code></pre>' +
+            '<hr>' +
             '<h4>Blockquote Example</h4>' +
             '<blockquote>This is a quote block.\nYou can put multiple lines in it.\nEven <b>bold</b> and <i>italic</i> can appear here if supported by your parser.</blockquote>' +
             '<h5>Ordered List</h5>' +

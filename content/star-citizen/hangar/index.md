@@ -21,25 +21,31 @@ comments about why and how I use specific ships.
 ++ : Unreleased Ships
 ```
 
-## Pledge Ships
+## Ship List
 
 ### Ground Vehicles and Snub Ships:
 
+- Industrial
+    - _Argo_ **Atlas**
 - Medical
     - _RSI_ **Ursa Medivac**
         - `A nice mobile respawn point!  Always handy to have.`
+- Ground Transport
+    - _Mirai_ **Pulse**
+        - `I own a couple of these.  It is nice to have a small ground transport that you can virtually throw into any ship with any sort of interior.`
 
 ### Space Ships:
 
 - **Solo Ships**
     - Run-abouts
         - _Origin_ **315p**
-            - `Debating changing this to the 325a or the Avenger Titan to have a bit more combat capability.`
     - Combat
-        - _Kruger_ **L-21 Wolf**
+        - _Anvil_ **Arrow**
+            - `Meta PvP light fighter. for my fleet! I want to try some PvP bounty hunting soon!`
         - _Anvil_ **F7C-S Hornet Ghost Mk II**
-        - _Crusader_ **Ares Star Fighter Inferno**
-            - `I am currently really enjoying ballistic weapon loadouts.  I know they are not currently 'meta' but where is the fun in that?`
+            - `I may switch out for a sabre.  I want to keep a 'stealth' ship in the fleet.`
+        - _Mirai_ **Guardian**
+            - `Current favorite fighter,  May switch out for the QI variant for QD capablities.`
     - Medical
         - _Anvil_ **C8R Pisces Rescue**
             - `A nice mobile respawn point!  Always handy to have.`
@@ -54,21 +60,22 @@ comments about why and how I use specific ships.
 - **Flexi-crew Ships**
     - Combat
         - _Crusader_ **A1 Spirit**
-            - `I want to be able to cover multiple combat roles as needed.  So to have this A1 bomber and the Retaliator torpedo bomber.  This helps to cover all the roles.`
+            - `I like the idea of bombing but I have yet to use this ship.  It may be up for the chopping block soon.`
         - _RSI_ **Constellation Taurus**
-            - `I am using the Taurus as my primary PVE solo ship. Big shields and big guns... what else does one need?`
-    - Cargo
-        - _Crusader_ **C1 Spirit**
-        - _Crusader_ **C2 Hercules Starlifter**
-    - Medical
-        - _RSI_ **Apollo Medivac**
-            - `When will medical gameplay be good again?`
+            - `I am using the Taurus as my primary PVE solo ship. Big shields and big guns... what else does one need? Did I mention it can carry cargo as well?`
+        - Cargo
+            - _Crusader_ **C1 Spirit**
+            - _Crusader_ **C2 Hercules Starlifter**
+                - `Crusader is my favorite manufacturer.  I love their hauling ships, sadly a lot of their other ships dont really mesh with my fleet needs yet.`
+        - Medical
+            - _RSI_ **Apollo Medivac**
+                - `When will medical gameplay be good again?  Nice to have mobile respawn point while doing fps gameplay.`
 
 
 - **Multi-Crew Ships**
     - Combat
-        - _RSI_ **Scorpius**
         - _Aegis_ **Retaliator**
+            - `Long Range torpedo bomber, Yet to see any real use.  May be put on the chopping block soon`
         - _Anvil_ **Paladin**
             - `The Paladin is currently undergoing testing and speculation for long term use in my fleet.  Currently looking to test multi-crew PVE operations.`
         - _RSI_ **Polaris**
@@ -76,29 +83,24 @@ comments about why and how I use specific ships.
             - `I may eventually push this to a larger ship, like the Kraken.  The privateer variant would be fun for the shops as well.`
     - Exploration
         - ++_Misc_ **Odyssey**
-            - `Please go into 'Active Production' sooner rather than later... PLEASE!`
+            - `Please go into 'Active Production' sooner rather than later... PLEASE! Depending on hanger size and minng/refining capablilites, this could replace the Polaris as a solo mothership, allowing thoes funds to be used elsewhere.`
     - Industrial
         - ++_Anvil_ **Crucible**
+            - `I like to help people in need out in the 'verse.  Like the medical ships, this should help me help others.`
         - ++_RSI_ **Orion**
+            - `A compliment to my friend's Reclaimer.  Between us we can cover mining and salvaging multicrew operations.`
 
 
 - **Loaned Ships**
     - _Anvil_ **C8R Pisces**
-    - _Anvil_ **Arrow**
     - _Drake_ **Buccaneer**
+    - _Anvil_ **Gladiator**
     - _Anvil_ **F7C-M Super Hornet Mk I**
     - _Vandul_ **Scythe**
     - _Misc_ **Reliant Kore**
-    - _Anvil_ **Gladiator**
-        - `The Avil Gladiator, while currently loaned, will be purchased in the future when it loses its loan status.`
-        - `I really enjoy that it is more like an 'attack' craft with larger torpedos but the manuverability of a heavy fighter.`
     - _RSI_ **Constellation Andromeda**
     - _Argo_ **Mole**
     - _Anvil_ **Carrack**
-
-## In-Game Acquisition
-
-- _Argo_ **ATLAS**
 
 ---
 

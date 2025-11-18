@@ -40,8 +40,6 @@ comments about why and how I use specific ships.
     - Run-abouts
         - _Origin_ **315p**
     - Combat
-        - _Anvil_ **Arrow**
-            - `Meta PvP light fighter. for my fleet! I want to try some PvP bounty hunting soon!`
         - _Anvil_ **F7C-S Hornet Ghost Mk II**
             - `I may switch out for a sabre.  I want to keep a 'stealth' ship in the fleet.`
         - _Mirai_ **Guardian**
@@ -59,8 +57,6 @@ comments about why and how I use specific ships.
 
 - **Flexi-crew Ships**
     - Combat
-        - _Crusader_ **A1 Spirit**
-            - `I like the idea of bombing but I have yet to use this ship.  It may be up for the chopping block soon.`
         - _RSI_ **Constellation Taurus**
             - `I am using the Taurus as my primary PVE solo ship. Big shields and big guns... what else does one need? Did I mention it can carry cargo as well?`
         - Cargo
@@ -74,8 +70,6 @@ comments about why and how I use specific ships.
 
 - **Multi-Crew Ships**
     - Combat
-        - _Aegis_ **Retaliator**
-            - `Long Range torpedo bomber, Yet to see any real use.  May be put on the chopping block soon`
         - _Anvil_ **Paladin**
             - `The Paladin is currently undergoing testing and speculation for long term use in my fleet.  Currently looking to test multi-crew PVE operations.`
         - _RSI_ **Polaris**
@@ -92,6 +86,7 @@ comments about why and how I use specific ships.
 
 
 - **Loaned Ships**
+    - _Anvil_ **Arrow**
     - _Anvil_ **C8R Pisces**
     - _Drake_ **Buccaneer**
     - _Anvil_ **Gladiator**

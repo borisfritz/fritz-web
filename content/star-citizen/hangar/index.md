@@ -40,19 +40,20 @@ comments about why and how I use specific ships.
     - Run-abouts
         - _Origin_ **315p**
     - Combat
+        - _Esperia_ **Talon**
         - _Anvil_ **F7C-S Hornet Ghost Mk II**
-            - `I may switch out for a sabre.  I want to keep a 'stealth' ship in the fleet.`
-        - _Mirai_ **Guardian**
-            - `Current favorite fighter,  May switch out for the QI variant for QD capablities.`
+            - `I love more stealty ships, especially when it comes to my fighters!  `
+        - _Anvil_ **F7A EXEC**
+        - _Mirai_ **Guardian QI**
+            - `Upgraded to QI variant to add additional capabiliteis to my fleet.`
     - Medical
         - _Anvil_ **C8R Pisces Rescue**
             - `A nice mobile respawn point!  Always handy to have.`
     - Industrial
         - _Misc_ **Prospector**
+            - `On loan from Orion, but will be part of my perminant fleet if loan status is removed.`
         - _Misc_ **Fortune**
-            - `I am downsizing from the Vulture so I can fit bot the Prospector and Fortune in my Polaris for off-grid operations.`
-        - --_Drake_ **Golem**
-        - --_Drake_ **Vulture**
+            - `I have downsized from the Vulture so I can fit bot the Prospector and Fortune in my Polaris for off-grid operations.`
 
 
 - **Flexi-crew Ships**
@@ -70,8 +71,9 @@ comments about why and how I use specific ships.
 
 - **Multi-Crew Ships**
     - Combat
+        - _RSI_ **Scorpius**
         - _Anvil_ **Paladin**
-            - `The Paladin is currently undergoing testing and speculation for long term use in my fleet.  Currently looking to test multi-crew PVE operations.`
+            - `Scorpius and Paladin are great fighter and large ship (respectivly) duo fighters.`
         - _RSI_ **Polaris**
             - `The main reason for getting a Polaris is for off-grid operations.  It is mostly to act as my solo 'mother ship'.  With that being said it would be exciting to use it for large multi-crew operations as well.`
             - `I may eventually push this to a larger ship, like the Kraken.  The privateer variant would be fun for the shops as well.`
@@ -79,6 +81,8 @@ comments about why and how I use specific ships.
         - ++_Misc_ **Odyssey**
             - `Please go into 'Active Production' sooner rather than later... PLEASE! Depending on hanger size and minng/refining capablilites, this could replace the Polaris as a solo mothership, allowing thoes funds to be used elsewhere.`
     - Industrial
+        - _Argo_ **Mole**
+            - `Currently on loan from the Orion and seeing enough use.`
         - ++_Anvil_ **Crucible**
             - `I like to help people in need out in the 'verse.  Like the medical ships, this should help me help others.`
         - ++_RSI_ **Orion**
@@ -94,7 +98,6 @@ comments about why and how I use specific ships.
     - _Vandul_ **Scythe**
     - _Misc_ **Reliant Kore**
     - _RSI_ **Constellation Andromeda**
-    - _Argo_ **Mole**
     - _Anvil_ **Carrack**
 
 ---

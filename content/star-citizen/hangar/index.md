@@ -10,7 +10,7 @@ comments about why and how I use specific ships.
 
 #### Ship Types:
 
-- **Solo Ships:** _Vehicles that are soley solo ships.  No room for any additional crew._
+- **Solo Ships:** _Vehicles that are sole solo ships.  No room for any additional crew._
 - **Flexi-Crew Ships:** _Vehicles that can be flown effectively solo or with additional crew members._
 - **Multi-Crew Ships:** _Vehicles that can only be flown effectively with a crew and have heavily reduced capabilities when flown solo._
 
@@ -46,10 +46,16 @@ comments about why and how I use specific ships.
         - _Anvil_ **F7A EXEC**
         - _Mirai_ **Guardian QI**
             - `Upgraded to QI variant to add additional capabiliteis to my fleet.`
+    - Cargo
+        - _Drake_ **Golem OX**
+    - Exploration
+        - _Drake_ **Clipper**
     - Medical
         - _Anvil_ **C8R Pisces Rescue**
             - `A nice mobile respawn point!  Always handy to have.`
     - Industrial
+        - --_RSI_ **Salvation**
+            - `Testing rubble and future LTI token.`
         - _Misc_ **Prospector**
             - `On loan from Orion, but will be part of my perminant fleet if loan status is removed.`
         - _Misc_ **Fortune**
@@ -61,7 +67,6 @@ comments about why and how I use specific ships.
         - _RSI_ **Constellation Taurus**
             - `I am using the Taurus as my primary PVE solo ship. Big shields and big guns... what else does one need? Did I mention it can carry cargo as well?`
         - Cargo
-            - _Crusader_ **C1 Spirit**
             - _Crusader_ **C2 Hercules Starlifter**
                 - `Crusader is my favorite manufacturer.  I love their hauling ships, sadly a lot of their other ships dont really mesh with my fleet needs yet.`
         - Medical

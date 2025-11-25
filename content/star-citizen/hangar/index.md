@@ -38,24 +38,21 @@ comments about why and how I use specific ships.
 
 - **Solo Ships**
     - Run-abouts
-        - _Origin_ **315p**
+        - _Drake_ **Clipper**
+        - --_Origin_ **315p**
     - Combat
+        - _Kruger_ **L-22 Alpha Wolf**
         - _Esperia_ **Talon**
-        - _Anvil_ **F7C-S Hornet Ghost Mk II**
             - `I love more stealty ships, especially when it comes to my fighters!  `
         - _Anvil_ **F7A EXEC**
         - _Mirai_ **Guardian QI**
             - `Upgraded to QI variant to add additional capabiliteis to my fleet.`
     - Cargo
         - _Drake_ **Golem OX**
-    - Exploration
-        - _Drake_ **Clipper**
     - Medical
         - _Anvil_ **C8R Pisces Rescue**
             - `A nice mobile respawn point!  Always handy to have.`
     - Industrial
-        - --_RSI_ **Salvation**
-            - `Testing rubble and future LTI token.`
         - _Misc_ **Prospector**
             - `On loan from Orion, but will be part of my perminant fleet if loan status is removed.`
         - _Misc_ **Fortune**
@@ -78,7 +75,7 @@ comments about why and how I use specific ships.
     - Combat
         - _RSI_ **Scorpius**
         - _Anvil_ **Paladin**
-            - `Scorpius and Paladin are great fighter and large ship (respectivly) duo fighters.`
+            - `Paladin has been melted down in an attempt to get the Pioneer.`
         - _RSI_ **Polaris**
             - `The main reason for getting a Polaris is for off-grid operations.  It is mostly to act as my solo 'mother ship'.  With that being said it would be exciting to use it for large multi-crew operations as well.`
             - `I may eventually push this to a larger ship, like the Kraken.  The privateer variant would be fun for the shops as well.`

@@ -39,7 +39,6 @@ comments about why and how I use specific ships.
 - **Solo Ships**
     - Run-abouts
         - _Drake_ **Clipper**
-        - --_Origin_ **315p**
     - Combat
         - _Kruger_ **L-22 Alpha Wolf**
         - _Esperia_ **Talon**
@@ -64,6 +63,7 @@ comments about why and how I use specific ships.
         - _RSI_ **Constellation Taurus**
             - `I am using the Taurus as my primary PVE solo ship. Big shields and big guns... what else does one need? Did I mention it can carry cargo as well?`
         - Cargo
+            - _Esperia_ **Prowler Utility**
             - _Crusader_ **C2 Hercules Starlifter**
                 - `Crusader is my favorite manufacturer.  I love their hauling ships, sadly a lot of their other ships dont really mesh with my fleet needs yet.`
         - Medical
@@ -75,13 +75,13 @@ comments about why and how I use specific ships.
     - Combat
         - _RSI_ **Scorpius**
         - _Anvil_ **Paladin**
-            - `Paladin has been melted down in an attempt to get the Pioneer.`
         - _RSI_ **Polaris**
             - `The main reason for getting a Polaris is for off-grid operations.  It is mostly to act as my solo 'mother ship'.  With that being said it would be exciting to use it for large multi-crew operations as well.`
-            - `I may eventually push this to a larger ship, like the Kraken.  The privateer variant would be fun for the shops as well.`
     - Exploration
         - ++_Misc_ **Odyssey**
             - `Please go into 'Active Production' sooner rather than later... PLEASE! Depending on hanger size and minng/refining capablilites, this could replace the Polaris as a solo mothership, allowing thoes funds to be used elsewhere.`
+    - Cargo
+        - ++_Drake_ **Ironclad**
     - Industrial
         - _Argo_ **Mole**
             - `Currently on loan from the Orion and seeing enough use.`
@@ -90,17 +90,6 @@ comments about why and how I use specific ships.
         - ++_RSI_ **Orion**
             - `A compliment to my friend's Reclaimer.  Between us we can cover mining and salvaging multicrew operations.`
 
-
-- **Loaned Ships**
-    - _Anvil_ **Arrow**
-    - _Anvil_ **C8R Pisces**
-    - _Drake_ **Buccaneer**
-    - _Anvil_ **Gladiator**
-    - _Anvil_ **F7C-M Super Hornet Mk I**
-    - _Vandul_ **Scythe**
-    - _Misc_ **Reliant Kore**
-    - _RSI_ **Constellation Andromeda**
-    - _Anvil_ **Carrack**
 
 ---
 

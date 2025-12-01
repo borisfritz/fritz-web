@@ -5,7 +5,7 @@
 [![Fritz in the 'Verse](/images/fritz-in-the-verse.png)](/star-citizen/)
 
 Hey all!  This is just a simple list of my current hangar! The overall structure is currently a work in progress.
-In the future I plan on addding links to each ship's wiki page to help provide more information.  I will also be adding
+In the future I plan on adding links to each ship's wiki page to help provide more information.  I will also be adding
 comments about why and how I use specific ships.
 
 #### Ship Types:
@@ -33,6 +33,7 @@ comments about why and how I use specific ships.
 - Ground Transport
     - _Mirai_ **Pulse**
         - `I own a couple of these.  It is nice to have a small ground transport that you can virtually throw into any ship with any sort of interior.`
+    - --_Greycat_ **MDC**
 
 ### Space Ships:
 
@@ -64,8 +65,10 @@ comments about why and how I use specific ships.
             - `I am using the Taurus as my primary PVE solo ship. Big shields and big guns... what else does one need? Did I mention it can carry cargo as well?`
         - Cargo
             - _Esperia_ **Prowler Utility**
-            - _Crusader_ **C2 Hercules Starlifter**
-                - `Crusader is my favorite manufacturer.  I love their hauling ships, sadly a lot of their other ships dont really mesh with my fleet needs yet.`
+            - _Crusader_ **Hercules Starlifter C2**
+                - `On Loan from Railen untill it releases.`
+            - ++_Gatac_ **Railen**
+            - ++_Drake_ **Ironclad**
         - Medical
             - _RSI_ **Apollo Medivac**
                 - `When will medical gameplay be good again?  Nice to have mobile respawn point while doing fps gameplay.`
@@ -89,6 +92,7 @@ comments about why and how I use specific ships.
             - `I like to help people in need out in the 'verse.  Like the medical ships, this should help me help others.`
         - ++_RSI_ **Orion**
             - `A compliment to my friend's Reclaimer.  Between us we can cover mining and salvaging multicrew operations.`
+        - ++_CNOU_ **Pioneer**
 
 
 ---

@@ -61,17 +61,16 @@ comments about why and how I use specific ships.
 
 - **Flexi-crew Ships**
     - Combat
-        - _RSI_ **Constellation Taurus**
-            - `I am using the Taurus as my primary PVE solo ship. Big shields and big guns... what else does one need? Did I mention it can carry cargo as well?`
-        - Cargo
-            - _Esperia_ **Prowler Utility**
-            - _Crusader_ **Hercules Starlifter C2**
-                - `On Loan from Railen untill it releases.`
-            - ++_Gatac_ **Railen**
-            - ++_Drake_ **Ironclad**
-        - Medical
-            - _RSI_ **Apollo Medivac**
-                - `When will medical gameplay be good again?  Nice to have mobile respawn point while doing fps gameplay.`
+        - _Drake_ **Corsair**
+    - Cargo
+        - _Esperia_ **Prowler Utility**
+        - _Crusader_ **Hercules Starlifter C2**
+            - `On Loan from Railen untill it releases.`
+        - ++_Gatac_ **Railen**
+        - ++_Drake_ **Ironclad**
+    - Medical
+        - _RSI_ **Apollo Medivac**
+            - `When will medical gameplay be good again?  Nice to have mobile respawn point while doing fps gameplay.`
 
 
 - **Multi-Crew Ships**

@@ -33,7 +33,6 @@ comments about why and how I use specific ships.
 - Ground Transport
     - _Mirai_ **Pulse**
         - `I own a couple of these.  It is nice to have a small ground transport that you can virtually throw into any ship with any sort of interior.`
-    - --_Greycat_ **MDC**
 
 ### Space Ships:
 
@@ -44,7 +43,6 @@ comments about why and how I use specific ships.
         - _Kruger_ **L-22 Alpha Wolf**
         - _Esperia_ **Talon**
             - `I love more stealty ships, especially when it comes to my fighters!  `
-        - _Anvil_ **F7A EXEC**
         - _Mirai_ **Guardian QI**
             - `Upgraded to QI variant to add additional capabiliteis to my fleet.`
     - Cargo
@@ -64,10 +62,8 @@ comments about why and how I use specific ships.
         - _Drake_ **Corsair**
     - Cargo
         - _Esperia_ **Prowler Utility**
-        - _Crusader_ **Hercules Starlifter C2**
-            - `On Loan from Railen untill it releases.`
-        - ++_Gatac_ **Railen**
-        - ++_Drake_ **Ironclad**
+        - _Gatac_ **Railen**
+        - _Drake_ **Ironclad**
     - Medical
         - _RSI_ **Apollo Medivac**
             - `When will medical gameplay be good again?  Nice to have mobile respawn point while doing fps gameplay.`
@@ -77,13 +73,9 @@ comments about why and how I use specific ships.
     - Combat
         - _RSI_ **Scorpius**
         - _Anvil_ **Paladin**
-        - _RSI_ **Polaris**
-            - `The main reason for getting a Polaris is for off-grid operations.  It is mostly to act as my solo 'mother ship'.  With that being said it would be exciting to use it for large multi-crew operations as well.`
     - Exploration
         - ++_Misc_ **Odyssey**
             - `Please go into 'Active Production' sooner rather than later... PLEASE! Depending on hanger size and minng/refining capablilites, this could replace the Polaris as a solo mothership, allowing thoes funds to be used elsewhere.`
-    - Cargo
-        - ++_Drake_ **Ironclad**
     - Industrial
         - _Argo_ **Mole**
             - `Currently on loan from the Orion and seeing enough use.`

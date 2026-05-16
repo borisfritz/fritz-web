@@ -68,6 +68,7 @@ comments about why and how I use specific ships.
         - ++_Gatac_ **Railen**
             - `I just fell in love with alian ships, lets see how good this thing will be!`
         - _Drake_ **Ironclad**
+            - `Want to know whats back there? Ass, We haulin' ass!`
     - Medical
         - _RSI_ **Apollo Medivac**
             - `When will medical gameplay be good again?  Nice to have mobile respawn point while doing fps gameplay.`

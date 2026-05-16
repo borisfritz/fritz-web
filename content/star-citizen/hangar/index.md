@@ -32,21 +32,22 @@ comments about why and how I use specific ships.
         - `A nice mobile respawn point!  Always handy to have.`
 - Ground Transport
     - _Mirai_ **Pulse**
-        - `I own a couple of these.  It is nice to have a small ground transport that you can virtually throw into any ship with any sort of interior.`
+        - `It is nice to have a small ground transport that you can virtually throw into any ship with any sort of interior.`
 
 ### Space Ships:
 
 - **Solo Ships**
     - Run-abouts
         - _Drake_ **Clipper**
+            - `Daily driver! Go from A to B in comfort with Drake!`
     - Combat
-        - _Kruger_ **L-22 Alpha Wolf**
         - _Esperia_ **Talon**
             - `I love more stealty ships, especially when it comes to my fighters!  `
         - _Mirai_ **Guardian QI**
             - `Upgraded to QI variant to add additional capabiliteis to my fleet.`
     - Cargo
         - _Drake_ **Golem OX**
+            - `Great little hauler that can fit in other larger ships with hangars! Good for light loads!`
     - Medical
         - _Anvil_ **C8R Pisces Rescue**
             - `A nice mobile respawn point!  Always handy to have.`
@@ -60,9 +61,12 @@ comments about why and how I use specific ships.
 - **Flexi-crew Ships**
     - Combat
         - _Drake_ **Corsair**
+            - `Nice larger Multi-role ship.  Light hauling, good combat, and with multicrew capabiliteis!`
     - Cargo
         - _Esperia_ **Prowler Utility**
-        - _Gatac_ **Railen**
+            - `Stealth hauling for thoes risky routes!`
+        - ++_Gatac_ **Railen**
+            - `I just fell in love with alian ships, lets see how good this thing will be!`
         - _Drake_ **Ironclad**
     - Medical
         - _RSI_ **Apollo Medivac**
@@ -72,7 +76,9 @@ comments about why and how I use specific ships.
 - **Multi-Crew Ships**
     - Combat
         - _RSI_ **Scorpius**
+            - `For when a buddy and I need to control the skies!`
         - _Anvil_ **Paladin**
+            - `For when a couple buddies and I need to control the skies!`
     - Exploration
         - ++_Misc_ **Odyssey**
             - `Please go into 'Active Production' sooner rather than later... PLEASE! Depending on hanger size and minng/refining capablilites, this could replace the Polaris as a solo mothership, allowing thoes funds to be used elsewhere.`
@@ -84,6 +90,7 @@ comments about why and how I use specific ships.
         - ++_RSI_ **Orion**
             - `A compliment to my friend's Reclaimer.  Between us we can cover mining and salvaging multicrew operations.`
         - ++_CNOU_ **Pioneer**
+            - `Your base are belong to me!`
 
 
 ---
